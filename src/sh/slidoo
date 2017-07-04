@@ -1,0 +1,12 @@
+#!/bin/bash
+export PASSWORD=${PASSWORD:-"GAOEM_ATM_123"}
+export EVENTID=${EVENTID:-119364}
+export QUESTIONID=${QUESTIONID:-1795714}
+export TIMES=${TIMES:-4}
+echo "liking event \"$EVENTID\" question \"$QUESTIONID\" $TIMES times with pwd \"$PASSWORD\""
+for i in `seq 1 $TIMES`
+do
+	token=`curl -s -H "Content-Type: application/json;charset=UTF-8" -d '{"password":"'$PASSWORD'"}' https://app.sli.do/v0.4/events/$EVENTID/auth | jq -r '.access_token'`
+	curl -s -H "Authorization: Bearer $token" -H "Content-Type: application/json" -H "Accept: application/json" -o /dev/null -X POST -d '{"score":1}' https://app.sli.do/v0.4/events/$EVENTID/questions/$QUESTIONID/like
+done
+echo "done"
