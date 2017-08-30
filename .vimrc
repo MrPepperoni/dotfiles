@@ -1,4 +1,5 @@
 execute pathogen#infect()
+colorscheme herokudoc
 syntax on
 filetype plugin indent on
 set nocompatible
@@ -21,7 +22,6 @@ set softtabstop=4
 set tabstop=4
 set noexpandtab
 " colorscheme molokai
-colorscheme herokudoc
 hi Normal guibg=NONE ctermbg=NONE
 hi NonText guibg=NONE ctermbg=NONE
 
@@ -49,3 +49,7 @@ set list lcs=tab:\|\
 "highlight leadingSpaces ctermbg=red guibg=red
 
 let g:templates_no_autocmd = 1
+
+"let g:EclimCompletionMethod = 'omnifunc'
+
+

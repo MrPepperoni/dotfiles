@@ -299,3 +299,9 @@ endif
 if 1
     delcommand CSAHi
 endif
+
+hi Normal guibg=NONE ctermbg=NONE
+hi NonText guibg=NONE ctermbg=NONE
+hi SpecialKey guibg=NONE ctermbg=NONE
+
+
