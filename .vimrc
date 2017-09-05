@@ -44,3 +44,4 @@ set listchars=tab:\ \ ,trail:\
 hi SpecialKey ctermbg=red guibg=red
 
 let g:templates_no_autocmd = 1
+let g:ycm_server_python_interpreter = '/usr/bin/python2'
