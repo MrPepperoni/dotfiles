@@ -167,7 +167,8 @@ exec --no-startup-id /usr/bin/feh --bg-fill -r -z /mnt/wallpapers
 exec --no-startup-id compton
 exec --no-startup-id "setxkbmap us"
 exec --no-startup-id "setxkbmap -option caps:super"
-exec --no-startup-id tilda
+# exec --no-startup-id tilda
+exec --no-startup-id stjerm -m windows -k q -o 75 -h 40% -w 1918 -b thick -fn "Source Code Pro Regular 10"
 
 workspace 1 output DP-1
 workspace 2 output DP-1
@@ -190,6 +191,8 @@ for_window [title="AppConNaviHUD"] move container to workspace 5
 for_window [title="AppConNaviCluster"] floating enable
 for_window [title="AppConNaviCluster"] move container to workspace 5
 for_window [class="Guake!"] floating enable
+for_window [class="Tilda"] floating enable
+for_window [class="Yakuake"] floating enable
 
 
 

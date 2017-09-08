@@ -90,7 +90,6 @@ setprompt() {
 }
 setprompt
 
-[ -f ~/.alias ] && . ~/.alias
 
 #export TERM=xterm-256color
 

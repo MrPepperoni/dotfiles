@@ -6,3 +6,18 @@ alias dvall='for i in *-{response,request}.dump; do dv view $i > $i.out; done'
 alias extractlyc='for i in *; do lic=$(grep binaryLicense $i | sed "s/.*>\(.*\)<.*/\1/" - | base64 -d -); if [[ ! -z $lic ]] echo -n "$lic" > extracted_from_$i.lyc; done'
 alias igohere='export NNG_APP_FOLDER=$PWD'
 alias hdiff='() { FNAME="\"$@\"" vim -d ~/dev3/**/${FNAME} ~/hockey/**/${FNAME} }'
+fg() {
+    if [[ $# -eq 1 && $1 = - ]]; then
+        builtin fg %-
+    else
+        builtin fg %"$@"
+    fi
+}
+bg() {
+    if [[ $# -eq 1 && $1 = - ]]; then
+        builtin bg %-
+    else
+        builtin bg %"$@"
+    fi
+}
+

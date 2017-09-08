@@ -1,0 +1,6 @@
+[Unit]
+Description=Restart wallpaper mount if needed
+
+[Service]
+ExecStart=/home/aujvary/src/sh/restart-mount.sh
+

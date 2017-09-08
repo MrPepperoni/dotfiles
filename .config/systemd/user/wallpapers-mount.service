@@ -1,0 +1,13 @@
+[Unit]
+Description=Start sshfs
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sshfs -p 9254 -o reconnect,compression=yes,transform_symlinks,IdentityFile=/home/aujvary/.ssh/id_rsa,ServerAliveInterval=45,ServerAliveCountMax=2,ssh_command='autossh -M 0' wallpapers@siddhartha.dynu.net:/mnt/disk1/wallpapers /mnt/wallpapers
+RemainAfterExit=true
+StandardOutput=journal
+
+[Install]
+WantedBy=default.target
+
