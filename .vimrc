@@ -1,4 +1,19 @@
-execute pathogen#infect()
+if has('python3')
+endif
+
+call plug#begin()
+Plug 'tpope/vim-sensible'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'vim-syntastic/syntastic'
+Plug 'uu59/vim-herokudoc-theme', { 'as': 'herokudoc' }
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'aperezdc/vim-template'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'craigemery/vim-autotag'
+call plug#end()
+":PlugInstall
+
 syntax on
 filetype plugin indent on
 set nocompatible
@@ -44,4 +59,7 @@ set listchars=tab:\ \ ,trail:\
 hi SpecialKey ctermbg=red guibg=red
 
 let g:templates_no_autocmd = 1
-let g:ycm_server_python_interpreter = '/usr/bin/python2'
+let g:ycm_server_python_interpreter = '/usr/bin/python'
+
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['python'] }
+
